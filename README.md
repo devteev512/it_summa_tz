@@ -16,8 +16,11 @@ sudo apt install postgresql-client-12
 nano ~/.bashrc
 
 Добавить строки в конец файла:
-export SPARK_HOME="/"Ваш путь к репозиторию"/TZ_ATEMPT_2/spark-3.1.3-bin-hadoop3.2"
-export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
+
+export SPARK_HOME="/"Ваш путь к репозиторию"/TZ_ATEMPT_2/spark-3.1.3-bin-hadoop3.2" 
+
+export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin 
+
 export PYTHONPATH=$SPARK_HOME/python:$PYTHONPATH
 
 4) Активировать среду:
