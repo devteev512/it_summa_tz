@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.5">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <com.gslab.pepper.config.plaintext.PlainTextConfigElement guiclass="TestBeanGUI" testclass="com.gslab.pepper.config.plaintext.PlainTextConfigElement" testname="Pepper-Box PlainText Config" enabled="true">
+        <stringProp name="TestPlan.comments">MyTest</stringProp>
+        <stringProp name="jsonSchema">{
+	&quot;Id&quot;:{{UUID()}},
+	&quot;Date&quot;:{{TIMESTAMP()}}
+}
+</stringProp>
+        <stringProp name="placeHolder">MyTestMsg</stringProp>
+      </com.gslab.pepper.config.plaintext.PlainTextConfigElement>
+      <hashTree/>
+      <com.gslab.pepper.config.serialized.SerializedConfigElement guiclass="TestBeanGUI" testclass="com.gslab.pepper.config.serialized.SerializedConfigElement" testname="Pepper-Box Serialized Config" enabled="true">
+        <stringProp name="className">com.gslab.pepper</stringProp>
+        <collectionProp name="objProperties"/>
+        <stringProp name="placeHolder">MyTestMsg</stringProp>
+      </com.gslab.pepper.config.serialized.SerializedConfigElement>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

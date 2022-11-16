@@ -1,0 +1,22 @@
+export PYSPARK_DRIVER_PYTHON="jupyter"
+export PYSPARK_DRIVER_PYTHON_OPTS="notebook"
+export PYSPARK_PYTHON=python3
+export PYSPARK_SUBMIT_ARGS="--master local[3] pyspark-shell"
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+
+-------------ЗАПУСКА НОУТБУКА----------------
+pyspark --packages org.apache.spark:spark-streaming-kafka-0-10_2.12:3.1.3,org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.3
+
+
+------------ЗАПУСК KAFKA-------------------------
+kafka/bin/zookeeper-server-start.sh kafka/config/zookeeper.properties
+kafka/bin/kafka-server-start.sh kafka/config/server.properties
+
+-------------JMETER----------
+TZ_KAFKA_SPARK/apache-jmeter-5.5/bin/jmeter
+
+
+export SPARK_HOME="/home/tabqui-acer/TZ_ATEMPT_2/spark-3.1.3-bin-hadoop3.2"
+export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
+export PYTHONPATH=$SPARK_HOME/python:$PYTHONPATH
+
