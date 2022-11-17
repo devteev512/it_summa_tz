@@ -5,7 +5,7 @@
 
 sudo apt-get update
 
-sudo apt -y install openjdk-8-jre
+sudo apt-get install openjdk-8-jdk
 
 sudo apt-get install scala
 
@@ -17,7 +17,7 @@ nano ~/.bashrc
 
 Добавить строки в конец файла:
 
-export SPARK_HOME="/"Ваш путь к репозиторию"/TZ_ATEMPT_2/spark-3.1.3-bin-hadoop3.2" 
+export SPARK_HOME="/"Ваш путь к репозиторию"/it_summa_tz/spark-3.1.3-bin-hadoop3.2" 
 
 export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin 
 
@@ -31,9 +31,6 @@ source .env/bin/activate
 
 docker pull projectairws/greenplum
 
-6) Создать таблицу в БД:
-
-psql postgresql://gpadmin:gpadmin@localhost:5432/gpadmin? -f create_table.sql
 
 -------------------------------------------------------ЗАПУСК-------------------------------------------------------
 1) Запустить в отдельном терминале Zookeeper:
@@ -51,10 +48,15 @@ kafka/bin/kafka-topics.sh --create \
    --replication-factor 1 --partitions 1 \
    --topic test_evteev
    
-4) Запустить docker image с портом 5432
+4) Запустить docker image с портом 5432 (у меня запускается через GUI, но не хочет работает через docker run - падает с Exited(0), не успел разобраться:( )
 
-5) Запустить JMETER apache-jmeter-5.5/bin/jmeter
+5) Создать таблицу в БД:
 
-6) Запустить spark_test.py скрипт
+psql postgresql://gpadmin:gpadmin@localhost:5432/gpadmin? -f create_table.sql
 
-7) Запустить 
+6) Запустить JMETER apache-jmeter-5.5/bin/jmeter.sh  выбрать файл Java_test.jmx -> запустить (Не получилось запустить через jmeter -n -t, у меня работает только через GUI:( )
+
+6) Запустить spark_test.py скрипт:
+
+spark-submit --packages org.apache.spark:spark-streaming-kafka-0-10_2.12:3.1.3,org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.3 spark_test.py
+

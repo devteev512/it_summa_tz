@@ -1,4 +1,4 @@
-CREATE TABLE public.test_evteev2 (
+CREATE TABLE public.test_evteev (
 	id int4 NULL,
 	firstname varchar(200) NULL,
 	lastname varchar(200) NULL,
