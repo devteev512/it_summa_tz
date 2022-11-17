@@ -50,13 +50,12 @@ kafka/bin/kafka-topics.sh --create \
 
 psql postgresql://gpadmin:gpadmin@localhost:5432/gpadmin? -f create_table.sql
 
-6) Запустить JMETER apache-jmeter-5.5/bin/jmeter.sh  выбрать файл Java_test.jmx -> запустить (Не получилось запустить через jmeter -n -t, у меня работает только через GUI:( )
-
-7) Активировать среду:
+6) Активировать среду:
 
 source .env/bin/activate
 
-8) Запустить spark_test.py скрипт:
+7) Запустить spark_test.py скрипт:
 
 spark-submit --packages org.apache.spark:spark-streaming-kafka-0-10_2.12:3.1.3,org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.3 spark_test.py
 
+8) Запустить JMETER apache-jmeter-5.5/bin/jmeter.sh  выбрать файл Java_test.jmx -> запустить (Не получилось запустить через jmeter -n -t, у меня работает только через GUI:( )
